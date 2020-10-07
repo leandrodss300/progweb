@@ -317,7 +317,7 @@ desired effect
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="table-body">
               <tr>
                 <td><img src="dist/img/avatar.png" class="img-circle img-sm" alt="Imagem do Usuário"></td>
                 <td>Nome do Usuário</td>
@@ -349,9 +349,9 @@ desired effect
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-          </div>
-
-          <div class="col-md-8">
+          </div>          
+       </div>
+       <div class="col-md-6">
             <div class="small-box bg-yellow">
             <div class="inner">
               <h3>1</h3>
@@ -362,7 +362,6 @@ desired effect
             </div>
           </div>
           </div>
-       </div>
           </div>
       
         
@@ -373,36 +372,36 @@ desired effect
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form">
+          <form role="form" id="form-usuarios">
             <div class="box-body">
               <div class="form-group">
-                <label for="input_nome">Nome</label>
-                <input type="text" class="form-control" id="input_nome" name="input_nome" placeholder="Digite o nome do usuário">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do usuário">
               </div>
               <div class="form-group">
-                <label for="input_nome">Gênero</label>
+                <label for="nome">Gênero</label>
                 <div class="radio">
-                  <label for="input_generoM">
-                    <input type="radio" name="input_genero" id="input_generoM" value="M" checked>
+                  <label for="generoM">
+                    <input type="radio" name="genero" id="generoM" value="M">
                     Masculino
                   </label>
                 </div>
                 <div class="radio">
-                  <label for="input_generoF">
-                    <input type="radio" name="input_genero" id="input_generoF" value="F" >
+                  <label for="generoF">
+                    <input type="radio" name="genero" id="generoF" value="F">
                     Feminino
                   </label>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="input_nascimento">Nascimento</label>
-                <input type="date" class="form-control" id="input_nascimento" name="input_nascimento">
+                <label for="nascimento">Nascimento</label>
+                <input type="date" class="form-control" id="nascimento" name="nascimento">
               </div>
 
               <div class="form-group">
-                <label for="input_nacionalidade">Nacionalidade</label>
-                <select class="form-control" name="input_nacionalidade" id="input_nacionalidade">
+                <label for="nacionalidade">Nacionalidade</label>
+                <select class="form-control" name="nacionalidade" id="nacionalidade">
                   <option value selected>Selecione um país</option>
                   <option value="Brasil">Brasil</option>
                   <option value="Portugal">Portugal</option>
@@ -412,21 +411,21 @@ desired effect
               </div>
               
               <div class="form-group">
-                <label for="input_email">Email</label>
-                <input type="email" class="form-control" id="input_email" name="input_email" placeholder="Digite o e-mail">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail">
               </div>
                
               <div class="form-group">
-                <label for="input_senha">Senha</label>
-                <input type="password" class="form-control" id="input_senha" name="input_senha" placeholder="Digite a senha">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a senha">
               </div>
               <div class="form-group">
-                <label for="input_foto">Foto</label>
-                <input type="file" id="input_foto" name="input_foto">
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto">
               </div>
               <div class="checkbox">
-                <label for="input_admin">
-                  <input type="checkbox" id="input_admin" name="input_admin"> Administrador
+                <label for="admin">
+                  <input type="checkbox" id="admin" name="admin"> Administrador
                 </label>
               </div>
             </div>
@@ -549,6 +548,8 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
-     
+<script src="model/User.js"></script> 
+<script src="controller/UserController.js"></script>
+<script src="starter.js"></script>
 </body>
 </html>
