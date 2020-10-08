@@ -2,7 +2,7 @@
 let form = document.querySelector("#form-usuarios")
 //Selecionando elementos que tem o atributo name
 let inputs = document.querySelectorAll("#form-usuarios [name]")
-let tbody = document.querySelector("table-body")
+let tbody = document.querySelector("#table-body")
 let user = {}
 /*
 console.log(inputs)
