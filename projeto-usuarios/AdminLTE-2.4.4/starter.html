@@ -342,7 +342,7 @@ desired effect
           <div class="col-xs-6">
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>10</h3>
+              <h3 id="qtd-usuarios">0</h3>
 
               <p>Usuários</p>
             </div>
@@ -354,7 +354,7 @@ desired effect
        <div class="col-md-6">
             <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>1</h3>
+              <h3 id="qtd-admins">0</h3>
               <p>Administradores</p>
             </div>
             <div class="icon">
@@ -365,7 +365,7 @@ desired effect
           </div>
       
         
-          <div class="box box-success">
+          <div class="box box-success" id="box-user-create">
 
           <div class="box-header with-border">
             <h3 class="box-title">Novo Usuário</h3>
@@ -376,13 +376,13 @@ desired effect
             <div class="box-body">
               <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do usuário">
+                <input type="text" class="form-control" required id="nome" name="nome" placeholder="Digite o nome do usuário">
               </div>
               <div class="form-group">
                 <label for="nome">Gênero</label>
                 <div class="radio">
                   <label for="generoM">
-                    <input type="radio" name="genero" id="generoM" value="M">
+                    <input type="radio" required name="genero" id="generoM" value="M">
                     Masculino
                   </label>
                 </div>
@@ -439,7 +439,82 @@ desired effect
         
         
           </div>
-      
+
+          <div class="box box-info" style="display: none" id="box-user-edit">
+
+            <div class="box-header with-border">
+              <h3 class="box-title">Editar Usuário</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" id="form-editar-usuarios">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" required id="edit-nome" name="nome" placeholder="Digite o nome do usuário">
+                </div>
+                <div class="form-group">
+                  <label for="nome">Gênero</label>
+                  <div class="radio">
+                    <label for="generoM">
+                      <input type="radio" required name="genero" id="edit-generoM" value="M">
+                      Masculino
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label for="generoF">
+                      <input type="radio" name="genero" id="edit-generoF" value="F">
+                      Feminino
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <label for="nascimento">Nascimento</label>
+                  <input type="date" class="form-control" id="edit-nascimento" name="nascimento">
+                </div>
+  
+                <div class="form-group">
+                  <label for="nacionalidade">Nacionalidade</label>
+                  <select class="form-control" name="nacionalidade" id="edit-nacionalidade">
+                    <option value selected>Selecione um país</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Australia">Austrália</option>
+                    <option value="Venezuela">Venezuela</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="edit-email" name="email" placeholder="Digite o e-mail">
+                </div>
+                 
+                <div class="form-group">
+                  <label for="senha">Senha</label>
+                  <input type="password" class="form-control" id="edit-senha" name="senha" placeholder="Digite a senha">
+                </div>
+                <div class="form-group">
+                  <label for="foto">Foto</label>
+                  <input type="file" id="edit-foto" name="foto">
+                  
+                </div>
+                <div class="checkbox">
+                  <label for="admin">
+                    <input type="checkbox" id="edit-admin" name="admin"> Administrador
+                  </label>
+                </div>
+              </div>
+              <!-- /.box-body -->
+  
+              <div class="box-footer">
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="button" class="btn btn-light" id="btn-edit-cancel">Cancelar</button>
+              </div>
+            </form>
+          
+          
+          </div>
       </div>
       </div>
 

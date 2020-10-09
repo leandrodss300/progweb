@@ -6,6 +6,15 @@ class UserController{
         this.table = table
         this.onSubmit()
         this.onChangePhoto()
+        this.onEdit()
+    }
+
+    onEdit(){
+        let btnCancel = document.querySelector("#btn-edit-cancel")
+        btnCancel.addEventListener("click", e => {
+            document.querySelector("#box-user-create").style.display = "block"
+            document.querySelector("#box-user-edit").style.display = "none"
+        })
     }
     onChangePhoto(){
         let inputFoto = this.form.querySelector("[type=file]")
@@ -18,6 +27,7 @@ class UserController{
             }
         })
     }
+
     onSubmit(){
         this.form.addEventListener("submit", (event) => {
             event.preventDefault()
@@ -25,14 +35,15 @@ class UserController{
             console.log(user)
             this.addLine(user)
             this.resetForm()
-            //Pegar os valores atuais --> querySelector
-            
-            //Adiciono +1 em usuarios
-            if(user.admin){
-                //Aducuibar +1 em administradores
-            }
-            //Atualizar os valores
+            this.atualizaDisplay(user)
         })
+    }
+
+    atualizaDisplay(user){
+        this.qtdUsuarios = parseInt(this.qtdUsuarios)+1
+        if(user.admin){
+            this.qtdAdmins = parseInt(this.qtdAdmins)+1
+        }
     }
 
     resetForm(){
@@ -56,8 +67,21 @@ class UserController{
             <td>
                 <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
                 <button type="button" class="btn btn-danger btn-delete btn-xs btn-flat">Excluir</button>
-            </td>`
-    
+            </td>
+            `
+
+        tr.querySelector(".btn-edit").addEventListener("click", e => {
+            let form = document.querySelector("#form-editar-usuarios")
+            let atributo
+            for(atributo in user){
+                let input = form.querySelector(`[name=${atributo}]`)
+                input.value = user[atributo]
+            }
+            //1 - Remover o formulário de cadastro
+            //2 - Mostrar o formulário de edit
+            document.querySelector("#box-user-create").style.display = "none"
+            document.querySelector("#box-user-edit").style.display = "block"
+        })
         this.table.appendChild(tr)
     
     }
@@ -80,6 +104,19 @@ class UserController{
         } )
         return new User(user.nome, user.genero, user.nascimento,
             user.nascionalidade, user.email, user.senha, user.foto, user.admin)
+    }
+
+    get qtdUsuarios(){
+        return document.querySelector("#qtd-usuarios").innerHTML
+    }
+    set qtdUsuarios(value){
+        document.querySelector("#qtd-usuarios").innerHTML = value
+    }
+    get qtdAdmins(){
+        return document.querySelector("#qtd-admins").innerHTML
+    }
+    set qtdAdmins(value){
+        document.querySelector("#qtd-admins").innerHTML = value
     }
 
 }
