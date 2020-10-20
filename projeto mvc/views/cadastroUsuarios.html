@@ -28,30 +28,57 @@
     </nav>
 <br></br>
 <div class="container">
-    <a type="button" class="btn btn-success" href="/cadastroProdutos">Cadastrar Produto</a>
-<br></br>
-    <div class="box-body no-padding">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                  <th>id</th>
-                  <th>Nome</th>
-                  <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-              <% console.log(produtos.length) %>
-                <% if(produtos.length > 0) { %>
-                        <% for(let i =0 ; i < produtos.length; i++) { %>
-                        <tr>    
-                            <td><%= produtos[i].idProduto %></td>
-                            <td><%= produtos[i].nome %></td>
-                            <td><%= produtos[i].preco %></td>
-                        </tr>
-                        <% } %>
-                <% } %>
-            </tbody>
-        </table>
+<br><br>
+    
+    <div class="row">
+    <h4>Cadastro de Usuário</h4>
+        <div class="col-md-12 jumbotron">
+            <form action="/adicionar-noticia" method="POST">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" required class="form-control" id="nome" name="titulo" placeholder="Nome">
+                    </div>
+                    
+                    <div class="col">
+                        <input type="text" required class="form-control" id="idade" name="titulo" placeholder="Idade">
+                    </div>
+                </div>
+                <br>
+                <label for="titulo"><h5>Endereço</h5></label>
+                <div class="row">
+                    
+                    <div class="col">
+                        <input type="text" required class="form-control" id="endereco" name="titulo" placeholder="Rua">
+                    </div>
+                        
+                    <div class="col">
+                        <input type="text" required class="form-control" id="numero" name="titulo" placeholder="Número">
+                    </div>
+
+                    <div class="col">
+                        <input type="text" required class="form-control" id="bairro" name="titulo" placeholder="Bairro">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" required class="form-control" id="cidade" name="titulo" placeholder="Cidade">
+                    </div>
+                    <div class="col">
+                    <select class="form-control form-control-sm">
+                        <option>AM</option>
+                        <option>AC</option>
+                        <option>BH</option>
+                        <option>MG</option>
+                        <option>SC</option>
+                    </select>
+                    </div>
+
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
     </div>
 </div>
 

@@ -18,17 +18,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Usuários</a>
+                        <a class="nav-link" href="views/usuarios/index.ejs">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/produtos">Produtos</a>
+                        <a class="nav-link" href="views/produtos/produtos.ejs">Produtos</a>
                     </li>
                 </ul>
             </div>
     </nav>
 <br></br>
 <div class="container">
-        <a type="button" class="btn btn-success" href="/cadastroUsuarios">Cadastrar Usuario</a>
+    <button type="button" class="btn btn-success">Cadastrar Usuário</button>
 <br></br>
     <div class="box-body no-padding">
         <table class="table table-striped">
@@ -43,21 +43,23 @@
                 </tr>
             </thead>
             <tbody id="table-body">
-                <!--   <%= usuarios.usuarios %> -->    
+                <!--   <%= usuarios.usuarios %>     -->
                 <% console.log(usuarios.length) %>
                 <% if(usuarios.length > 0) { %>
                         <% for(let i =0 ; i < usuarios.length; i++) { %>
                         <tr>    
-                            <td><%= usuarios[i].idCliente %></td>
-                            <td><%= usuarios[i].nome %></td>
-                            <td><%= usuarios[i].idade %></td>
-                            <td><%= usuarios[i].cidade %></td>
-                            <td><%= usuarios[i].estado %></td>
-                            <td>
+                        <div class="col-md-12 jumbotron">
+                            <th><%= usuarios[i].idCliente %></th>
+                            <th><%= usuarios[i].nome %></th>
+                            <th><%= usuarios[i].idade %></th>
+                            <th><%= usuarios[i].cidade %></th>
+                            <th><%= usuarios[i].estado %></th>
+                            <th>
                                 <%= usuarios[i].endereco %>,
                                 <%= usuarios[i].numero %>,
                                 <%= usuarios[i].bairro %>
-                            </td>
+                            </th>
+                        </div>
                         </tr>
                         <% } %>
                 <% } %>

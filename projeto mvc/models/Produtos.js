@@ -1,8 +1,8 @@
 var fs = require('fs')
 
 
-function Produtos(name){
-    this.name = name
+function Produtos(){
+
 }
 
 Produtos.prototype.getProdutos = (callback)=>{
@@ -10,6 +10,7 @@ Produtos.prototype.getProdutos = (callback)=>{
 
         if(!err){
             var obj = JSON.parse(result)
+            callback(obj.produtos)
         }
     })
 }
