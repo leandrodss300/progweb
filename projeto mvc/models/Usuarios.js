@@ -2,6 +2,7 @@ var fs = require('fs')
 
 
 function Usuarios(body){
+    console.log("chegou aqui!")
     if(body){
         this.nome = body.nome
         this.idade = body.idade
@@ -39,6 +40,8 @@ Usuarios.prototype.cadUsuarios = function(callback){
 
         if(!err){
             var obj = JSON.parse(result)
+            var idd = obj.usuarios[obj.usuarios.length]
+            cadastroUsuarios.id = idd
             obj.usuarios.push(cadastroUsuarios)
             console.log(obj)
             let str = JSON.stringify(obj)
@@ -46,7 +49,7 @@ Usuarios.prototype.cadUsuarios = function(callback){
                 if(err)
                     throw err
                 console.log("Arquivo atualizado!")
-                callback()
+                callback(obj.usuarios)
             })
         }
     })

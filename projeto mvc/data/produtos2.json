@@ -1,0 +1,54 @@
+{	
+	"produtos":[
+        {
+            "idProduto" : 1,
+            "nome" : "Toalha de mesa",
+            "preco" : 45
+        },
+        {
+            "idProduto" : 2,
+            "nome" : "Geladeira 1 porta Electrolux Cycle",
+            "preco" : 1274
+        },
+        {
+            "idProduto" : 3,
+            "nome" : "Fogao 4 bocas Esmaltec Bali",
+            "preco" : 422
+        },
+        {
+            "idProduto" : 4,
+            "nome" : "Notebook",
+            "preco" : 1200
+        },
+        {
+            "idProduto" : 5,
+            "nome" : "Tablet",
+            "preco" : 900
+        },
+        {
+            "idProduto" : 6,
+            "nome" : "Ultrabook",
+            "preco" : 2100
+        },
+        {
+            "idProduto" : 7,
+            "nome" : "Sofa",
+            "preco" : 1500
+        },
+        {
+            "idProduto" : 8,
+            "nome" : "Cama",
+            "preco" : 800
+        },
+        {
+            "idProduto" : 9,
+            "nome" : "Cadeira",
+            "preco" : 400
+        },
+        {
+            "idProduto" : 10,
+            "nome" : "Mesa",
+            "preco" : 1450
+        }
+    ]
+}

@@ -8,6 +8,19 @@ function produtos(app,req,res){
     )
 }
 
+function cadProdutos(app,req,res){
+    res.render("cadastro/cadastroProdutos")
+}
+
+function cadastrarP(app,req,res){
+    let cadastrar = new app.models.Produtos(req.body)
+    cadastrar.cadProdutos( ()=>{
+        res.redirect('/')
+    })
+}
+
 module.exports = {
-    produtos: produtos
+    produtos: produtos,
+    cadProdutos: cadProdutos,
+    cadastrarP: cadastrarP
 }

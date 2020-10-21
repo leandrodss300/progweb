@@ -8,8 +8,8 @@ module.exports = function(app){
     })
 
     app.post('/cadUsuario', function(req,res){
-        console.log(req.body)
-        app.controllers.usuarios.cadUsuarios(app,req,res)
-        res.end("cadastrou")
+      
+        app.controllers.usuarios.cadastrarU(app,req,res)
+        
     })
 }
